@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/hundredpoints/cli/compare/v1.0.6...v1.0.7) (2021-07-06)
+
+
+### Bug Fixes
+
+* add missing dependancy ([dc3e244](https://github.com/hundredpoints/cli/commit/dc3e244b71d524ab05c763f8c462aac21bb495ae))
+
 ## [1.0.6](https://github.com/hundredpoints/cli/compare/v1.0.5...v1.0.6) (2021-07-06)
 
 

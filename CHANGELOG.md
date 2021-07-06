@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/hundredpoints/cli/compare/v1.0.4...v1.0.5) (2021-07-06)
+
+
+### Bug Fixes
+
+* skip publishing linux binary ([b1b21e6](https://github.com/hundredpoints/cli/commit/b1b21e6905ef8deee8be9c14b6b297d9d423492a))
+
 ## [1.0.4](https://github.com/hundredpoints/cli/compare/v1.0.3...v1.0.4) (2021-07-06)
 
 

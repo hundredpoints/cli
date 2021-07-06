@@ -1,0 +1,11 @@
+schema:
+  - ${HUNDREDPOINTS_API_URL}:
+      headers:
+        Authorization: Bearer ${HUNDREDPOINTS_API_TOKEN}
+documents: 'src/**/*.graphql'
+generates:
+  ./src/sdk/__generated__.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request

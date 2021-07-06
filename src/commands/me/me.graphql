@@ -1,0 +1,23 @@
+query me {
+  me {
+    id
+
+    ... on User {
+      profile {
+        id
+        name
+      }
+    }
+
+    ... on IntegrationInstallation {
+      installedBy {
+        id
+        name
+      }
+
+      integration {
+        name
+      }
+    }
+  }
+}

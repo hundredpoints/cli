@@ -1,0 +1,7 @@
+mutation createActivityEvents($input: CreateActivityEventsInput!) {
+  createActivityEvents(input: $input) {
+    code
+    error
+    message
+  }
+}

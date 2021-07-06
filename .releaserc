@@ -10,9 +10,9 @@
     }],
     ["@semantic-release/github", {
       "assets": [
-        {"path": "dist/pkg/cli-linux", "label": "Linux binary"},
-        {"path": "dist/pkg/cli-macos", "label": "Mac OSX binary"},
-        {"path": "dist/pkg/cli-win.exe", "label": "Windows binary"}
+        {"path": "dist/pkg/linux/hundredpoints", "label": "Linux binary"},
+        {"path": "dist/pkg/macos/hundredpoints", "label": "Mac OSX binary"},
+        {"path": "dist/pkg/windows/hundredpoints.exe", "label": "Windows binary"}
       ]
     }],
   ],

@@ -11,6 +11,11 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run pkg
+      - run: |
+          # Rename these files for a nicer release
+          mkdir -p ./dist/pkg/linux; mv ./dist/pkg/cli-linux ./dist/pkg/linux/hundredpoints;
+          mkdir -p ./dist/pkg/macos; mv ./dist/pkg/cli-macos ./dist/pkg/macos/hundredpoints;
+          mkdir -p ./dist/pkg/windows; mv ./dist/pkg/cli-win.exe ./dist/pkg/windows/hundredpoints.exe;
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

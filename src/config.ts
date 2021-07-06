@@ -1,12 +1,20 @@
 // spell-checker: words cosmiconfig keytar
 
+import fs from "fs";
+import { join } from "path";
 import { writeFile } from "fs/promises";
 import { homedir } from "os";
-import { cosmiconfigSync } from "cosmiconfig";
+import findUp from "find-up";
 import { parse, stringify } from "ini";
 import keytar from "keytar";
 
 import { GlobalArguments } from "./commands/arguments";
+
+let configPath = findUp.sync([
+  ".hundredpointsrc",
+  ".hundredpoints.json",
+  ".hundredpoints",
+]);
 
 export type Config = {
   origin: string;
@@ -19,16 +27,9 @@ const env: Partial<Config> = {
   api: process.env.HUNDREDPOINTS_API || "/api/graphql",
 };
 
-const explorerSync = cosmiconfigSync("hundredpoints", {
-  searchPlaces: [".hundredpoints"],
-  loaders: {
-    noExt: (_, content) => parse(content),
-  },
-});
-
-const search = explorerSync.search(process.cwd());
-const filepath = search?.filepath || homedir() + "/.hundredpoints";
-let filesystemConfig = search?.config;
+let filesystemConfig = configPath
+  ? parse(fs.readFileSync(configPath, "utf-8"))
+  : {};
 
 const baseConfig: GlobalArguments = {
   ...env,
@@ -70,9 +71,9 @@ export async function writeConfig(
     },
   };
 
-  await writeFile(filepath, stringify(filesystemConfig));
+  configPath = configPath || join(homedir(), ".hundredpoints");
 
-  return filesystemConfig;
+  await writeFile(configPath, stringify(filesystemConfig));
 }
 
 export default baseConfig;

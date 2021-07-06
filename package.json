@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "commit": "cz",
-    "dev": "npm run build && npm run build:pkg",
+    "dev": "npm run build && npm run pkg",
     "graphql": "graphql-codegen -r dotenv/config && prettier --write src/sdk/__generated__.ts",
     "pkg": "pkg --compress --out-path=./dist/pkg . ",
     "prepare": "husky install",

@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/hundredpoints/cli/compare/v1.0.3...v1.0.4) (2021-07-06)
+
+
+### Bug Fixes
+
+* fix name of npm package binary ([49dd621](https://github.com/hundredpoints/cli/commit/49dd6213b3fb8708e95e08e94d86c450c93c537a))
+
 ## [1.0.3](https://github.com/hundredpoints/cli/compare/v1.0.2...v1.0.3) (2021-07-06)
 
 

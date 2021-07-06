@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/hundredpoints/cli/compare/v1.0.2...v1.0.3) (2021-07-06)
+
+
+### Bug Fixes
+
+* update license ([cd26224](https://github.com/hundredpoints/cli/commit/cd2622415197b990b286daf181481d1d5829a7a3))
+
 ## [1.0.2](https://github.com/hundredpoints/cli/compare/v1.0.1...v1.0.2) (2021-07-06)
 
 

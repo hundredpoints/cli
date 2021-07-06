@@ -16,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Lawlor",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "publishConfig": {
     "access": "public"
   },

@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/hundredpoints/cli/compare/v1.0.5...v1.0.6) (2021-07-06)
+
+
+### Bug Fixes
+
+* fix config loading ([466a601](https://github.com/hundredpoints/cli/commit/466a60123659192c24058274f0f5a3f1d0c4ace4))
+
 ## [1.0.5](https://github.com/hundredpoints/cli/compare/v1.0.4...v1.0.5) (2021-07-06)
 
 

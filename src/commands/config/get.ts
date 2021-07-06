@@ -1,5 +1,5 @@
 import { BuilderCallback } from "yargs";
-import { handlerNoSdk as globalHandler } from "../handler";
+import { Arguments, handlerNoSdk as globalHandler } from "../handler";
 
 export const command = "get <key>";
 export const desc = "Get a config value";
@@ -16,19 +16,17 @@ export const builder: BuilderCallback<ConfigGetArguments, ConfigGetArguments> =
     });
   };
 
-export const handler = globalHandler<ConfigGetArguments>(async function logout({
+export const handler = globalHandler(async function logout({
   key,
   ...config
-}) {
+}: Arguments<ConfigGetArguments>) {
   if (!config[key]) {
     return {
-      success: true,
       value: undefined,
     };
   }
 
   return {
-    success: true,
     value: config[key],
   };
 });

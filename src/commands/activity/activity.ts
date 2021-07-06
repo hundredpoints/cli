@@ -1,7 +1,7 @@
 import { BuilderCallback } from "yargs";
 import { CreateActivityEventInputEvent } from "../../sdk/__generated__";
 import { fileToGitUrl } from "../../utilities/git";
-import globalHandler from "../handler";
+import globalHandler, { Arguments } from "../handler";
 
 export const command = "activity <entities>";
 export const desc = "Submit activity";
@@ -24,8 +24,8 @@ export const builder: BuilderCallback<ActivityArguments, void> = (yargs) => {
     });
 };
 
-export const handler = globalHandler<ActivityArguments>(async function activity(
-  { entities, git, fileIgnoreList },
+export const handler = globalHandler(async function activity(
+  { entities, git, fileIgnoreList }: Arguments<ActivityArguments>,
   sdk
 ) {
   const input: Record<string, CreateActivityEventInputEvent> = {};

@@ -8,4 +8,5 @@ export type GlobalArguments = {
   json: boolean;
   token?: string;
   interactive: boolean;
+  programmatic?: boolean;
 };

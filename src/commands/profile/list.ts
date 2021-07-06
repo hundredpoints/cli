@@ -13,7 +13,7 @@ export const builder: BuilderCallback<void, void> = (yargs) => {
   });
 };
 
-export const handler = globalHandler<void>(async function () {
+export const handler = globalHandler(async function () {
   const credentials = await keytar.findCredentials("hundredpoints");
 
   return { profiles: credentials.map(({ account }) => account) };

@@ -1,6 +1,6 @@
 import { CommandBuilder } from "yargs";
 import { writeConfig } from "../../config";
-import { handlerNoSdk as globalHandler } from "../handler";
+import { Arguments, handlerNoSdk as globalHandler } from "../handler";
 
 export const command = "set <key> <value>";
 export const desc = "Set a config value";
@@ -26,14 +26,10 @@ export const builder: CommandBuilder<ConfigSetArguments, ConfigSetArguments> = (
   return yargs;
 };
 
-export const handler = globalHandler<ConfigSetArguments>(async function logout({
+export const handler = globalHandler(async function logout({
   key,
   value,
   profile,
-}) {
+}: Arguments<ConfigSetArguments>) {
   await writeConfig(profile, key, value);
-
-  return {
-    success: true,
-  };
 });

@@ -3,9 +3,10 @@ import { BuilderCallback } from "yargs";
 import keytar from "keytar";
 import prompts from "prompts";
 
-import { handlerNoSdk as globalHandler } from "../handler";
+import { Arguments, handlerNoSdk as globalHandler } from "../handler";
 
 import getSdk from "../../sdk";
+import { CliError } from "../../utilities/error";
 
 export const command = "set-token <token>";
 export const desc = "Set an access token for the current profile";
@@ -29,29 +30,33 @@ export const builder: BuilderCallback<IntegrationSetTokenArguments, void> = (
     });
 };
 
-export const handler = globalHandler<IntegrationSetTokenArguments>(
-  async function ({ profile, token, interactive, origin, api }) {
-    const sdk = getSdk({ token, origin, api });
+export const handler = globalHandler(async function ({
+  profile,
+  token,
+  interactive,
+  origin,
+  api,
+}: Arguments<IntegrationSetTokenArguments>) {
+  const sdk = getSdk({ token, origin, api });
 
-    if (interactive) {
-      const existing = await keytar.getPassword("hundredpoints", profile);
+  if (interactive) {
+    const existing = await keytar.getPassword("hundredpoints", profile);
 
-      if (!existing) {
-        const { confirm } = await prompts({
-          type: "confirm",
-          name: "confirm",
-          message: `Did you want to create a new profile named ${profile}`,
-        });
+    if (!existing) {
+      const { confirm } = await prompts({
+        type: "confirm",
+        name: "confirm",
+        message: `Did you want to create a new profile named ${profile}`,
+      });
 
-        if (!confirm) {
-          return;
-        }
+      if (!confirm) {
+        throw new CliError("User canceled");
       }
     }
-
-    const response = await sdk.me();
-
-    await keytar.setPassword("hundredpoints", profile, token);
-    return response.me;
   }
-);
+
+  const response = await sdk.me();
+
+  await keytar.setPassword("hundredpoints", profile, token);
+  return response.me;
+});

@@ -6,6 +6,7 @@
   "bin": {
     "hundredpoints": "hundredpoints.js"
   },
+  "sideEffects": false,
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",

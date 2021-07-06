@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/hundredpoints/cli/compare/v1.0.0...v1.0.1) (2021-07-06)
+
+
+### Bug Fixes
+
+* make npm access public ([adfc0e4](https://github.com/hundredpoints/cli/commit/adfc0e4d794640dbb83dc4d72569753466ca4e46))
+
 # 1.0.0 (2021-07-06)
 
 

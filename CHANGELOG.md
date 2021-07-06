@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hundredpoints/cli/compare/v1.0.7...v1.1.0) (2021-07-06)
+
+
+### Features
+
+* add programmatic commands ([84d8594](https://github.com/hundredpoints/cli/commit/84d85945b4d6665b23f2a97ebf358abbc1541c1f))
+
 ## [1.0.7](https://github.com/hundredpoints/cli/compare/v1.0.6...v1.0.7) (2021-07-06)
 
 

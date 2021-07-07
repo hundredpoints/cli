@@ -9,7 +9,7 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch", "pin"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
     }
